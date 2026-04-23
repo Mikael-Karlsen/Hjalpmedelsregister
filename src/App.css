@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+:root {
+  --primary-color: #0f172a;
+  --accent-color: #3b82f6;
+  --bg-main-color: #f1f5f9;
+  --card-white-color: #ffffff;
+  --text-dark-color: #1e293b;
+  --text-light-color: #64748b;
+  --radius: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: 'Inter', apple-system, sans-serif;
+  background-color: var(--bg-main-color);
+  color: var(--text-dark-color);
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* layout */
+.app-wrapper {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 40px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-header {
+  max-width: 1000px;
+  margin: 0 auto 48px auto;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
+
+.main-header p {
+  color: var(--text-light-color);
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* Components */
