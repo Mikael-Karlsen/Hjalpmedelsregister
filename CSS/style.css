@@ -16,7 +16,7 @@
 }
 
 * {
-    box-sizing: border-box; /* Hjälper till med layout-beräkningar */
+    box-sizing: border-box;
 }
 
 body {
@@ -83,7 +83,7 @@ body {
 
 main {
     flex-grow: 1;
-    min-width: 0; /* Förhindrar att main trycker ut sidebaren på små skärmar */
+    min-width: 0;
 }
 
 .content-header {
@@ -247,47 +247,41 @@ main {
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* Minska paddings överallt */
     .top-bar, .sub-nav, .layout-container {
         padding-left: 15px;
         padding-right: 15px;
     }
 
-    /* Gör att sidebar och main staplas på höjden istället för bredden */
     .layout-container {
         flex-direction: column;
         padding-top: 20px;
         gap: 20px;
     }
 
-    /* Låt sidebaren ta full bredd och ligga överst */
     .sidebar-list {
         width: 100%;
     }
 
-    /* Gör list-items horisontella och scrollbara om de är många */
     .list-items {
         flex-direction: row;
         overflow-x: auto;
         padding-bottom: 10px;
-        -webkit-overflow-scrolling: touch; /* Mjuk scroll på iPhone */
+        -webkit-overflow-scrolling: touch; 
     }
 
     .list-item {
-        white-space: nowrap; /* Hindrar texten från att radbrytas */
+        white-space: nowrap; 
         flex-shrink: 0;
     }
 
-    /* Sub-nav behöver också kunna scrollas om den blir för bred */
     .sub-nav {
         overflow-x: auto;
         white-space: nowrap;
         padding-bottom: 5px;
     }
 
-    /* Justera grid för rumskorten */
     .dashboard-grid {
-        grid-template-columns: 1fr; /* Ett kort per rad på mobilen */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
@@ -295,9 +289,80 @@ main {
         font-size: 1.4rem;
     }
 
-    /* Våningsväljaren (Pills) kan också behöva scrollas */
     .floor-nav {
         overflow-x: auto;
         padding-bottom: 5px;
     }
+}
+
+/* ==========================================================================
+    Detaljpanel (Ska ligga utanför Media Queryn)
+   ========================================================================== */
+
+.panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.5);
+    z-index: 1900; /* Dimman ligger under panelen */
+    display: none;
+}
+
+.panel-overlay.active {
+    display: block;
+}
+
+.details-panel {
+    position: fixed;
+    top: 0;
+    right: -400px; 
+    width: 400px;
+    height: 100vh; /* Ändrat till vh för full säkerhet */
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    z-index: 2000; /* Panelen ligger överst av allt */
+    display: flex;
+    flex-direction: column;
+}
+
+.details-panel.open {
+    right: 0; 
+}
+
+.panel-header {
+    padding: 20px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Hindrar headern från att tryckas ihop */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.panel-body {
+    padding: 20px;
+    overflow-y: auto; /* Tillåter scroll inuti panelen om det är många hjälpmedel */
+    background: #f8fafc;
+    flex-grow: 1;
+}
+
+.hjalpmedel-item {
+    background: white;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-soft);
 }

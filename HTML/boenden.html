@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="../CSS/style.css" />
     <title>Hjälpmedelsregister - Boenden</title>
 </head>
-
-<script src="../JS/script.js" defer></script>
-
 <body>
     <header class="top-bar">
         <div class="logo">Hjälpmedelsregister</div>
@@ -24,62 +21,36 @@
         <aside class="sidebar-list">
             <h3>Välj Boende</h3>
             <div class="list-items">
-                <a href="#" class="list-item active">Boende A</a>
+                <a href="#" class="list-item">Boende A</a>
                 <a href="#" class="list-item">Boende B</a>
                 <a href="#" class="list-item">Boende C</a>
             </div>
         </aside>
 
-        <main>
+        <main id="main-content">
             <header class="content-header">
-                <h1>Boende A</h1>
-                <nav class="floor-nav">
-                    <button class="floor-btn active">Plan 1</button>
-                    <button class="floor-btn">Plan 2</button>
-                    <button class="floor-btn">Plan 3</button>
-                </nav>
+                <h1>Välkommen</h1>
             </header>
-
             <div class="dashboard-grid">
-                
-                <div class="stat-card">
-                    <div class="card-header">
-                        <h3>Rum 101</h3>
-                        <span class="badge">OK</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Inventarier:</strong> 2 st</p>
-                        <p>Senaste besiktning: 2026-01-10</p>
-                    </div>
                 </div>
-
-                <div class="stat-card urgent">
-                    <div class="card-header">
-                        <h3>Rum 102</h3>
-                        <span class="badge warning">Besiktning krävs</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Inventarier:</strong> 4 st</p>
-                        <p>Senaste kontroll: 15 nov 2025</p>
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="card-header">
-                        <h3>Rum 103</h3>
-                        <span class="badge">OK</span>
-                    </div>
-                    <div class="card-body">
-                        <p><strong>Inventarier:</strong> 1 st</p>
-                        <p>Senaste kontroll: 5 feb 2026</p>
-                    </div>
-                </div>
-
-            </div> </main>
+        </main>
     </div>
 
     <footer class="footer-compact">
         <p>Skapad av <strong>Mikael Karlsen</strong></p>
     </footer>
+
+    <div id="panel-overlay" class="panel-overlay" onclick="closePanel()"></div>
+
+    <div id="details-panel" class="details-panel">
+    <div class="panel-header">
+        <h2 id="panel-title">Rumsdetaljer</h2>
+        <button onclick="closePanel()" class="close-btn">&times;</button>
+    </div>
+    <div id="panel-content" class="panel-body">
+        </div>
+</div>
+
+    <script src="../JS/script.js" defer></script>
 </body>
 </html>
