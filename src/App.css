@@ -42,3 +42,50 @@ body {
 }
 
 /* Components */
+.dashboard-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.building-card {
+  background-color: var(--card-white-color);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.building-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+.building-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.building-card .stats {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: var(--text-light-color);
+}
+
+.badge {
+  background-color: #eff6ff;
+  color: var(--accent-color);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-weight: 600;
+}
