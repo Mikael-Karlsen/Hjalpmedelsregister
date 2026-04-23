@@ -89,3 +89,52 @@ body {
   border-radius: 99px;
   font-weight: 600;
 }
+
+/* Navigation */
+.back-button {
+background: none;
+border: none;
+color: var(--accent-color);
+font-weight: 600;
+cursor: pointer;
+padding: 0;
+margin-bottom: 16px;
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 1rem;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+/* Page for floors and rooms */
+.list-item-card {
+  background-color: var(--card-white-color);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  border: 1px solid #e2e8f0;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.list-item-card:hover {
+  background-color: #f8fafc;
+  border-color: var(--accent-color);
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-weight: bold;
+}
