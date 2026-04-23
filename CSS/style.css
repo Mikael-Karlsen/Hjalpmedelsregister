@@ -241,3 +241,63 @@ main {
     color: var(--text-light-color);
     text-align: center;
 }
+
+/* ==========================================================================
+    Mobilanpassning
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* Minska paddings överallt */
+    .top-bar, .sub-nav, .layout-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Gör att sidebar och main staplas på höjden istället för bredden */
+    .layout-container {
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 20px;
+    }
+
+    /* Låt sidebaren ta full bredd och ligga överst */
+    .sidebar-list {
+        width: 100%;
+    }
+
+    /* Gör list-items horisontella och scrollbara om de är många */
+    .list-items {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch; /* Mjuk scroll på iPhone */
+    }
+
+    .list-item {
+        white-space: nowrap; /* Hindrar texten från att radbrytas */
+        flex-shrink: 0;
+    }
+
+    /* Sub-nav behöver också kunna scrollas om den blir för bred */
+    .sub-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    /* Justera grid för rumskorten */
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Ett kort per rad på mobilen */
+        gap: 15px;
+    }
+
+    .content-header h1 {
+        font-size: 1.4rem;
+    }
+
+    /* Våningsväljaren (Pills) kan också behöva scrollas */
+    .floor-nav {
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+}
