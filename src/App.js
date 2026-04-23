@@ -38,7 +38,7 @@ function App() {
           backgroundColor: 'transparent',
         }}>
           <span style={{
-            color: 'var(--accent)',
+            color: 'var(--accent-color)',
             fontWeight: '600'
             }}>Registrera nytt boende</span>
         </div>
