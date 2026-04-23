@@ -1,7 +1,6 @@
 /* ==========================================================================
-    Globala inställningar
+    1. VARIABLES & BASE
    ========================================================================== */
-
 :root {
     --primary-color: #0f172a;
     --accent-color: #3b82f6;
@@ -27,9 +26,8 @@ body {
 }
 
 /* ==========================================================================
-    Top Bar & Sub Nav
+    2. NAVIGATION
    ========================================================================== */
-
 .top-bar {
     height: 60px;
     background: var(--primary-color);
@@ -69,9 +67,8 @@ body {
 }
 
 /* ==========================================================================
-    Layout Containers
+    3. LAYOUT CONTAINERS
    ========================================================================== */
-
 .layout-container {
     padding: 30px 40px;
     max-width: 1400px;
@@ -104,9 +101,8 @@ main {
 }
 
 /* ==========================================================================
-    Components (Cards, Badges, Grid)
+    4. COMPONENTS (Grid, Cards, Badges)
    ========================================================================== */
-
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -164,9 +160,8 @@ main {
 }
 
 /* ==========================================================================
-    Page Specific (Boenden.html)
+    5. PAGE SPECIFIC (Boenden.html Sidebar & Buttons)
    ========================================================================== */
-
 .sidebar-list {
     width: 250px;
     flex-shrink: 0;
@@ -230,22 +225,8 @@ main {
 }
 
 /* ==========================================================================
-    Footer
+    6. MOBILE ADAPTATION
    ========================================================================== */
-
-.footer-compact {
-    margin-top: 60px;
-    padding: 20px 40px;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.85rem;
-    color: var(--text-light-color);
-    text-align: center;
-}
-
-/* ==========================================================================
-    Mobilanpassning
-   ========================================================================== */
-
 @media (max-width: 768px) {
     .top-bar, .sub-nav, .layout-container {
         padding-left: 15px;
@@ -266,7 +247,6 @@ main {
         flex-direction: row;
         overflow-x: auto;
         padding-bottom: 10px;
-        -webkit-overflow-scrolling: touch; 
     }
 
     .list-item {
@@ -296,9 +276,8 @@ main {
 }
 
 /* ==========================================================================
-    Detaljpanel (Ska ligga utanför Media Queryn)
+    7. DETAILS PANEL & EDIT FORM
    ========================================================================== */
-
 .panel-overlay {
     position: fixed;
     top: 0;
@@ -306,7 +285,7 @@ main {
     width: 100%;
     height: 100%;
     background: rgba(15, 23, 42, 0.5);
-    z-index: 1900; /* Dimman ligger under panelen */
+    z-index: 1900;
     display: none;
 }
 
@@ -319,17 +298,17 @@ main {
     top: 0;
     right: -400px; 
     width: 400px;
-    height: 100vh; /* Ändrat till vh för full säkerhet */
+    height: 100vh;
     background: white;
     box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     transition: 0.3s ease;
-    z-index: 2000; /* Panelen ligger överst av allt */
+    z-index: 2000;
     display: flex;
     flex-direction: column;
 }
 
 .details-panel.open {
-    right: 0; 
+    right: 0;
 }
 
 .panel-header {
@@ -339,7 +318,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-shrink: 0; /* Hindrar headern från att tryckas ihop */
 }
 
 .close-btn {
@@ -353,7 +331,7 @@ main {
 
 .panel-body {
     padding: 20px;
-    overflow-y: auto; /* Tillåter scroll inuti panelen om det är många hjälpmedel */
+    overflow-y: auto;
     background: #f8fafc;
     flex-grow: 1;
 }
@@ -365,4 +343,43 @@ main {
     border-radius: var(--radius-md);
     margin-bottom: 15px;
     box-shadow: var(--shadow-soft);
+}
+
+/* Edit form specific styles */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-form label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light-color);
+}
+
+.edit-form input {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.edit-form input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* ==========================================================================
+    8. FOOTER
+   ========================================================================== */
+.footer-compact {
+    margin-top: 60px;
+    padding: 20px 40px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-light-color);
+    text-align: center;
 }
