@@ -1,6 +1,7 @@
 # Hjälpmedelsregister (Prototyp)
 
-Detta är en **teknisk prototyp** av ett system för att hantera och överblicka besiktningar av hjälpmedel. 
+Detta är en **teknisk prototyp** av ett system för att hantera och överblicka besiktningar av hjälpmedel.
+Du kan se själva projektet här: https://hjalpmedelsregister.netlify.app/
 
 ## Status
 Projektet är under aktiv utveckling och fungerar för tillfället som en **frontend-prototyp**. 
