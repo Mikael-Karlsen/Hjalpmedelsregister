@@ -345,7 +345,6 @@ main {
     box-shadow: var(--shadow-soft);
 }
 
-/* Edit form specific styles */
 .edit-form {
     display: flex;
     flex-direction: column;

@@ -228,7 +228,7 @@ function deleteEquipment(index) {
         const { property, floor, roomNumber } = currentActiveRoom;
         const room = boendeData[property].plan[floor].find(r => r.rum === roomNumber);
         
-        room.hjalpmedel.splice(index, 1); // RemoveAt i C# tänk
+        room.hjalpmedel.splice(index, 1);
 
         renderDetailsContent(room);
         renderRooms(property, floor);
